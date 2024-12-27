@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jedi's Travel Blog</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+ 
+  <nav>
+    <div>Travel Blog</div>
+    <div>
+      <a href="index.html">Home</a> 
+      <a href="pages/about.html">About</a> 
+      <a href="pages/contact.html">Contact</a> 
+    </div>
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+  </nav>
+
+  <p class="top-3-text">Top 3 Country to Visit</p>
+
+  <main>
+    <section>
+      <!-- Destination 1 -->
+      <div class="card">
+        <img src="images/singapore.jpg" alt="Destination 1">
+        <div class="card-content">
+          <h3>Destination 1</h3>
+          <p id="text-1">
+            Explore the beauty of Singapore, a vibrant city-state known for its modern architecture, lush greenery, and cultural diversity. You'll enjoy incredible food, beautiful gardens, and amazing experiences!
+            <span id="extra-text-1" style="display: none;">
+              Singapore is a vibrant city-state known for its futuristic architecture, such as the Marina Bay Sands and Gardens by the Bay. It offers a rich blend of cultures, reflected in its diverse cuisine and historic neighborhoods like Chinatown and Little India. Despite being a modern metropolis, Singapore is a "City in a Garden," boasting lush greenery and iconic attractions like the Singapore Botanic Gardens.
+            </span>
+          </p>
+          <button id="see-more-1">See More</button>
+        </div>
+      </div>
+
+      <!-- Destination 2 -->
+      <div class="card">
+        <img src="images/paris.jpg" alt="Destination 2">
+        <div class="card-content">
+          <h3>Destination 2</h3>
+          <p id="text-2">
+            Paris is a romantic city famous for its historic landmarks, world-class art, and rich cultural heritage. Experience the Eiffel Tower, Louvre Museum, and unforgettable Parisian cafes!
+            <span id="extra-text-2" style="display: none;">
+              Paris is renowned as the City of Light, celebrated for its iconic landmarks like the Eiffel Tower and Notre-Dame Cathedral. It is a global hub for art, fashion, and cuisine, offering timeless beauty and rich cultural experiences. Walking along the Seine River or exploring its charming streets evokes a romantic and unforgettable charm.
+            </span>
+          </p>
+          <button id="see-more-2">See More</button>
+        </div>
+      </div>
+
+      <!-- Destination 3 -->
+      <div class="card">
+        <img src="images/new york.jpg" alt="Destination 3">
+        <div class="card-content">
+          <h3>Destination 3</h3>
+          <p id="text-3">
+            New York is a bustling metropolis known for its iconic landmarks, diverse culture, and vibrant arts scene. Visit Times Square, Central Park, and Broadway shows for an unforgettable experience!
+            <span id="extra-text-3" style="display: none;">
+              New York is a bustling metropolis known for its iconic skyline, featuring landmarks like the Statue of Liberty and Times Square. It is a melting pot of cultures, offering world-class cuisine, art, and entertainment. From the vibrancy of Broadway to the tranquility of Central Park, the city has something for everyone.
+            </span>
+          </p>
+          <button id="see-more-3">See More</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      const destinations = [
+        { buttonId: 'see-more-1', textId: 'extra-text-1' },
+        { buttonId: 'see-more-2', textId: 'extra-text-2' },
+        { buttonId: 'see-more-3', textId: 'extra-text-3' }
+      ];
+
+      destinations.forEach(dest => {
+        const seeMoreButton = document.getElementById(dest.buttonId);
+        const extraText = document.getElementById(dest.textId);
+
+        seeMoreButton.addEventListener("click", () => {
+          if (extraText.style.display === "none") {
+            extraText.style.display = "inline";
+            seeMoreButton.innerText = "See Less";
+          } else {
+            extraText.style.display = "none";
+            seeMoreButton.innerText = "See More";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
